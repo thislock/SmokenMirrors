@@ -88,7 +88,8 @@ void update_loop(SDL_Window * window) {
                     break;
             }
         }
-    
+
+        
         bgfx::setViewRect(0, 0, 0, DEFAULT_RESOLUTION);
 
         bgfx::touch(0);
@@ -99,8 +100,6 @@ void update_loop(SDL_Window * window) {
 }
 
 int main(void) {
-
-    SDL_SetHint(SDL_HINT_VIDEO_DRIVER, "wayland");
 
     if (!SDL_Init(0)) {
         log("error; SDL failed to initialise.");
