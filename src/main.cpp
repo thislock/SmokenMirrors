@@ -120,9 +120,9 @@ int main(void) {
 
     update_loop(window);
 
+    bgfx::shutdown();
     SDL_DestroyWindow(window);
     SDL_Quit();
-    bgfx::shutdown();
 
     return 0;
 }
