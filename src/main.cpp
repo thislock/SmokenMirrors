@@ -7,11 +7,11 @@
 #include <bgfx/bgfx.h>
 #include <bgfx/platform.h>
 
-#define DEFAULT_RESOLUTION_WIDTH 600
-#define DEFAULT_RESOLUTION_HEIGHT 400
-#define DEFAULT_RESOLUTION DEFAULT_RESOLUTION_WIDTH, DEFAULT_RESOLUTION_HEIGHT
+#include <assert.h>
 
+#include "constants.h"
 #include <iostream>
+
 void log(char * str) {
     std::cout << "LOG: " << str << ".\n";
 }
@@ -67,36 +67,14 @@ void initBgfx(bgfx::PlatformData & pd) {
     );
 }
 
+#include "engine.h"
 void update_loop(SDL_Window * window) {
 
-    bool running = true;
+    EngineMain engine = EngineMain();
 
-    SDL_Event event;
-    while (running) {
+    engine.run_engine();
 
-        bgfx::renderFrame();
-
-        while ( SDL_PollEvent(&event) ) 
-        {
-            switch(event.type) 
-            {
-                case SDL_EVENT_QUIT:
-                    running = false;
-                    break;
-                case SDL_EVENT_WINDOW_CLOSE_REQUESTED:
-                    running = false;
-                    break;
-            }
-        }
-
-        
-        bgfx::setViewRect(0, 0, 0, DEFAULT_RESOLUTION);
-
-        bgfx::touch(0);
-        bgfx::frame();
-
-    }
-
+    // quit
 }
 
 int main(void) {
@@ -107,6 +85,7 @@ int main(void) {
     }
 
     SDL_Window * window = SDL_CreateWindow("SmokenMirrors", DEFAULT_RESOLUTION, 0);
+    assert(window != nullptr);
     SDL_PumpEvents();
     SDL_SyncWindow(window);
     
