@@ -23,13 +23,4 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(bgfx_cmake)
 FetchContent_MakeAvailable(sdl3_cmake)
 
-add_executable(
-    SmokenMirrors 
-    src/main.cpp
-)
-
-target_link_libraries(SmokenMirrors PUBLIC bgfx)
-target_link_libraries(SmokenMirrors PUBLIC bimg)
-target_link_libraries(SmokenMirrors PUBLIC bx)
-
-target_link_libraries(SmokenMirrors PRIVATE SDL3)
+add_subdirectory(src)
