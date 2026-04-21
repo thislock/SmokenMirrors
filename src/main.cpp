@@ -84,7 +84,7 @@ int main(void) {
         return 1;
     }
 
-    SDL_Window * window = SDL_CreateWindow("SmokenMirrors", DEFAULT_RESOLUTION, 0);
+    SDL_Window * window = SDL_CreateWindow("SmokenMirrors", DEFAULT_RESOLUTION, SDL_WINDOW_RESIZABLE);
     assert(window != nullptr);
     SDL_PumpEvents();
     SDL_SyncWindow(window);

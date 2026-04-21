@@ -12,6 +12,7 @@ EngineMain::~EngineMain() {
 
 }
 
+#include<bimg/bimg.h>
 void EngineMain::run_engine() {
     
     bool running = true;
@@ -29,9 +30,10 @@ void EngineMain::run_engine() {
                     break;
             }
         }
-
         
         bgfx::setViewRect(0, 0, 0, DEFAULT_RESOLUTION);
+
+        
 
         bgfx::touch(0);
         bgfx::frame();
