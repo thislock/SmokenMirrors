@@ -6,14 +6,15 @@ class EngineMain {
 
 public:
 
-    EngineMain();
+    EngineMain(SDL_Window * window);
     ~EngineMain();
 
     void run_engine();
     
 private:
 
-    SDL_Event current_event;
-    
+    SDL_Window * window;
+
+    SDL_Event current_event;    
 
 };

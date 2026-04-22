@@ -3,16 +3,18 @@
 #include "engine.h"
 
 #include <bgfx/bgfx.h>
+#include <bgfx/platform.h>
+#include <bgfx/defines.h>
 
-EngineMain::EngineMain() {
 
+EngineMain::EngineMain(SDL_Window * window) {
+    this->window = window;
 }
 
 EngineMain::~EngineMain() {
 
 }
 
-#include<bimg/bimg.h>
 void EngineMain::run_engine() {
     
     bool running = true;
@@ -33,7 +35,6 @@ void EngineMain::run_engine() {
         
         bgfx::setViewRect(0, 0, 0, DEFAULT_RESOLUTION);
 
-        
 
         bgfx::touch(0);
         bgfx::frame();
