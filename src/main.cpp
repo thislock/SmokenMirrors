@@ -62,7 +62,8 @@ void update_loop(SDL_Window * window) {
 int main(void) {
 
     if (!SDL_Init(0)) {
-        log("error; SDL failed to initialise.");
+        char msg[] = "error; SDL failed to initialise.";
+        log(msg);
         return 1;
     }
 

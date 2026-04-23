@@ -2,10 +2,6 @@
 #include "constants.h"
 #include "engine.h"
 
-#include <bgfx/bgfx.h>
-#include <bgfx/platform.h>
-#include <bgfx/defines.h>
-
 
 EngineMain::EngineMain(SDL_Window * window) {
     this->window = window;
