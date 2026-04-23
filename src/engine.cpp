@@ -1,4 +1,5 @@
 
+#include "bgfx/bgfx.h"
 #include "constants.h"
 #include "engine.h"
 
@@ -12,7 +13,13 @@ EngineMain::~EngineMain() {
 }
 
 void EngineMain::run_engine() {
+
+    PosColorVertex::init();
+
+    bgfx::VertexBufferHandle vbh = 
+        bgfx::createVertexBuffer(bgfx::makeRef(s_cubeVertices, sizeof(s_cubeVertices)), PosColorVertex::ms_layout);
     
+
     bool running = true;
     while (running) {
 
