@@ -16,9 +16,14 @@ void EngineMain::run_engine() {
 
     PosColorVertex::init();
 
-    bgfx::VertexBufferHandle vbh = 
-        bgfx::createVertexBuffer(bgfx::makeRef(s_cubeVertices, sizeof(s_cubeVertices)), PosColorVertex::ms_layout);
+    bgfx::VertexBufferHandle vertex_buffer_handle = bgfx::createVertexBuffer(
+        bgfx::makeRef(s_cubeVertices, sizeof(s_cubeVertices)), 
+        PosColorVertex::ms_layout
+    );
     
+    bgfx::IndexBufferHandle index_buffer_handle = bgfx::createIndexBuffer(bgfx::makeRef(s_cubeTriList, sizeof(s_cubeTriList)));
+
+    bgfx::ShaderHandle shader_h = bgfx::createShader();
 
     bool running = true;
     while (running) {
