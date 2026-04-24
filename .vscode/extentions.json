@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "slevesque.shader",
+    "cadenas.vscode-glsllint",
+    "ms-vscode.cmake-tools"
+  ]
+}
