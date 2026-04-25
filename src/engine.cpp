@@ -23,7 +23,7 @@ void EngineMain::run_engine() {
     
     bgfx::IndexBufferHandle index_buffer_handle = bgfx::createIndexBuffer(bgfx::makeRef(s_cubeTriList, sizeof(s_cubeTriList)));
 
-    bgfx::ShaderHandle shader_h = bgfx::createShader();
+    //bgfx::ShaderHandle shader_h = bgfx::createShader();
 
     bool running = true;
     while (running) {
