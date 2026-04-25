@@ -11,6 +11,8 @@
 #define DEFAULT_RESOLUTION_HEIGHT 400
 #define DEFAULT_RESOLUTION DEFAULT_RESOLUTION_WIDTH, DEFAULT_RESOLUTION_HEIGHT
 
+#define f32 float
+
 // from https://github.com/bkaradzic/bgfx/blob/master/examples/01-cubes/cubes.cpp
 struct PosColorVertex
 {

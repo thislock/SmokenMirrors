@@ -9,3 +9,4 @@ add_executable(SourceNMirrors
 )
 
 target_link_libraries(SourceNMirrors PRIVATE bgfx bimg bx SDL3)
+

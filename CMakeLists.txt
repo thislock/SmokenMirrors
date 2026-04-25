@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10.0)
 project(SmokenMirrors VERSION 0.1.0 LANGUAGES C CXX)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 26)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # rust like include system 
@@ -9,20 +9,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(FetchContent)
 
 # bgfx graphics library
-FetchContent_Declare(
+fetchcontent_declare(
     bgfx_cmake
     GIT_REPOSITORY https://github.com/bkaradzic/bgfx.cmake.git # a nice cmake build that follows bgfx (thanks bro)
     GIT_TAG v1.139.9155-513 # latest tag i found with "verified", so i hope that means stable.
 )
 
 # SDL3 windowing
-FetchContent_Declare(
+fetchcontent_declare(
     sdl3_cmake
     GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
     GIT_TAG release-3.4.4 # latest stable at this time, i won't be changing this anytime soon.
 )
 
-FetchContent_MakeAvailable(bgfx_cmake)
-FetchContent_MakeAvailable(sdl3_cmake)
+fetchcontent_makeavailable(bgfx_cmake)
+fetchcontent_makeavailable(sdl3_cmake)
 
 add_subdirectory(src)
