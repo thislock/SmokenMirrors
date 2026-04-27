@@ -1,4 +1,5 @@
 
+
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_events.h>
 #include <SDL3/SDL_main.h>
@@ -11,6 +12,11 @@
 
 #include "constants.h"
 #include <iostream>
+
+#include <bgfx/embedded_shader.h>
+
+// #include <glsl/vs_color.sc.bin.h>
+// const bgfx::EmbeddedShader k_vs = BGFX_EMBEDDED_SHADER(vs_color);
 
 void log(char * str) {
     std::cout << "LOG: " << str << ".\n";
