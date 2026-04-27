@@ -2,8 +2,6 @@
 #include "bgfx/bgfx.h"
 #include "constants.h"
 #include "engine.h"
-#include <bgfx/embedded_shader.h>
-
 
 EngineMain::EngineMain(SDL_Window * window) {
     this->window = window;
